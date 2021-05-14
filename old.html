@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Why do you need Tensorflow? Live demo</title>
+    <meta name="description" content="Tensorflow live demo" />
+    <meta name="author" content="Samyak S Sarnayak" />
+
+    <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+  </head>
+
+  <body>
+    <h1>Tensorflow</h1>
+    <h3>Instructions</h3>
+
+    Type your values in the field and press enter (or click outside the box).
+
+    <br />
+    <br />
+
+    <hr />
+
+    <h2>Part 1</h2>
+
+    Teefie took 2.5 hours to reach his school 20 kms away. What was his average
+    speed?
+    <br />
+
+    Avg Speed:
+    <input
+      type="number"
+      id="1-avg-speed"
+      value="20.0"
+      onchange="callback_1()"
+    />
+    <br />
+
+    Oracle: <span id="1-oracle"></span>
+
+    <br />
+    <span id="1-output"></span>
+    <br />
+
+    <hr />
+
+    <h2>Part 2</h2>
+
+    ABCD is 50.0 and XYZ is 3.5. What is QWERTY?
+    <br />
+
+    QWERTY:
+    <input type="number" id="2-qwerty" value="20.0" onchange="callback_2()" />
+    <br />
+
+    Oracle: <span id="2-oracle"></span>
+
+    <br />
+    <span id="2-output"></span>
+    <br />
+
+    <hr />
+
+    <h2>Part 3</h2>
+
+    ABCD is 1234.5 and XYZ is 9.999. What is QWERTY?
+    <br />
+    Hint: a positive gradient means you need to go lower and a negative gradient
+    means you need to go higher.
+    <br />
+
+    QWERTY:
+    <input type="number" id="3-qwerty" value="1000.0" onchange="callback_3()" />
+    <br />
+
+    Gradient: <span id="3-grad"></span>
+
+    <br />
+    <span id="3-output"></span>
+    <br />
+
+    <hr />
+
+    <h2>Part 4</h2>
+
+    You have a fancy new ice cream maker. You add 1kg of cream to it.
+    <i>The Oracle</i> inside the ice cream maker tells you how bad your ice
+    cream is. You can choose the amount of milk and sugar to add to it.
+    <br />
+
+    Milk:
+    <input type="number" id="4-milk" value="500.0" onchange="callback_4()" />
+    <br />
+    Sugar:
+    <input type="number" id="4-sugar" value="600.0" onchange="callback_4()" />
+    <br />
+
+    Oracle: <span id="4-oracle"></span>
+
+    <br />
+    <span id="4-output"></span>
+    <br />
+
+    <hr />
+
+    <h2>Part 5</h2>
+
+    Same as part 4, but you have gradients to guide you.
+    <br />
+
+    Milk:
+    <input type="number" id="5-milk" value="500.0" onchange="callback_5()" />
+    Milk gradient:
+    <input readonly type="number" id="5-milk-gradient" value="0.0" />
+    <br />
+    Sugar:
+    <input type="number" id="5-sugar" value="600.0" onchange="callback_5()" />
+    Sugar gradient:
+    <input readonly type="number" id="5-sugar-gradient" value="0.0" />
+    <br />
+
+    Oracle: <span id="5-oracle"></span>
+
+    <br />
+    <span id="5-output"></span>
+    <br />
+
+    <hr />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
