@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Why do you need Tensorflow? Live demo</title>
+    <meta name="description" content="Tensorflow live demo" />
+    <meta name="author" content="Samyak S Sarnayak" />
+
+    <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+  </head>
+
+  <body>
+    <h1>Tensorflow</h1>
+    <h3>Instructions</h3>
+
+    Type your values in the field and press enter (or click outside the box).
+
+    <br />
+    <br />
+
+    <hr>
+
+    <h2> Part 1 </h2>
+
+    Teefie took 2.5 hours to reach his school 20 kms away. What was his average speed?
+    <br />
+
+    Avg Speed: <input type="number" id="1-avg-speed" value="10.0" onchange="callback_1()" />
+    <br />
+
+    Oracle: <span id="1-oracle"></span>
+
+    <br />
+    <span id="1-output"></span>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>
+</html>
