@@ -44,3 +44,31 @@ function callback_2() {
   }
 }
 callback_2();
+
+
+// part 3
+
+const distance_3 = tf.tensor([1234.5]);
+const time_3 = tf.tensor([9.999]);
+
+const oracle3 = input_ => {
+  return oracle2(input_, distance_3, time_3);
+};
+const oracle3_grad = tf.grad(oracle3);
+
+function callback_3() {
+  const avg_speed = document.getElementById("3-qwerty").value;
+  const input_ = tf.tensor([Number(avg_speed)]);
+  // const val_tensor = oracle3(input_);
+  // const val = val_tensor.arraySync()[0];
+  const grad = oracle3_grad(input_).arraySync()[0];
+
+  document.getElementById("3-grad").innerHTML = grad;
+
+  if (grad < 0.01 && grad > -0.01) {
+    document.getElementById("3-output").innerHTML = "You got it!";
+  } else {
+    document.getElementById("3-output").innerHTML = "";
+  }
+}
+callback_3();
