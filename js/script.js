@@ -101,6 +101,7 @@ function callback_4() {
 
   if (err < 0.01) {
     // answer is 14.01, 2.5
+    // or 12.3, 9
     document.getElementById("4-output").innerHTML =
       "You got it! Here's your ice-cream 🍦";
   } else {
