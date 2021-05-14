@@ -13,6 +13,7 @@ function callback_1() {
   document.getElementById("1-oracle").innerHTML = val;
 
   if (val == 0) {
+    // answer is 8
     document.getElementById("1-output").innerHTML = "You got it! 🎉";
   } else {
     document.getElementById("1-output").innerHTML = "";
@@ -39,6 +40,7 @@ function callback_2() {
   document.getElementById("2-oracle").innerHTML = val;
 
   if (val < 0.01) {
+    // answer is 14.3
     document.getElementById("2-output").innerHTML = "You got it! 🎉";
   } else {
     document.getElementById("2-output").innerHTML = "";
@@ -66,6 +68,7 @@ function callback_3() {
   document.getElementById("3-grad").innerHTML = grad;
 
   if (grad < 0.01 && grad > -0.01) {
+    // answer is 16.4611
     document.getElementById("3-output").innerHTML = "You got it! 🎉";
   } else {
     document.getElementById("3-output").innerHTML = "";
@@ -74,16 +77,15 @@ function callback_3() {
 callback_3();
 
 // part 4 and 5
-const cream = tf.tensor([1000.0]);
+const cream = tf.tensor([10.0]);
 
 function ic_oracle(milk, sugar, cream) {
   const term = tf.add(
-    tf.mul(tf.tensor([7.4]), milk),
-    tf.mul(tf.tensor([9.5]), sugar),
-    tf.mul(milk, cream),
-    tf.mul(sugar, cream)
+    tf.mul(tf.tensor([0.5]), tf.pow(milk, 2)),
+    tf.mul(tf.tensor([0.3]), tf.pow(sugar, 2)),
+    tf.mul(tf.tensor([0.0]), cream)
   );
-  return tf.square(tf.sub(tf.tensor([5000.0]), term));
+  return tf.square(tf.sub(tf.tensor([100.0]), term));
 }
 
 function callback_4() {
@@ -98,7 +100,9 @@ function callback_4() {
   document.getElementById("4-oracle").innerHTML = err;
 
   if (err < 0.01) {
-    document.getElementById("4-output").innerHTML = "You got it! Here's your ice-cream 🍦";
+    // answer is 14.01, 2.5
+    document.getElementById("4-output").innerHTML =
+      "You got it! Here's your ice-cream 🍦";
   } else {
     document.getElementById("4-output").innerHTML = "";
   }
@@ -127,7 +131,8 @@ function callback_5() {
   document.getElementById("5-sugar-gradient").value = sugar_err;
 
   if (err < 0.01) {
-    document.getElementById("5-output").innerHTML = "You got it! Here's your ice-cream 🍦";
+    document.getElementById("5-output").innerHTML =
+      "You got it! Here's your ice-cream 🍦";
   } else {
     document.getElementById("5-output").innerHTML = "";
   }
